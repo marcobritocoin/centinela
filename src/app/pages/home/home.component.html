@@ -1,0 +1,36 @@
+<div class="page-wrapper">
+    <div class="page-inner">
+
+        <aside class="page-sidebar">
+            <app-menu></app-menu>
+        </aside>
+
+        <div class="page-content-wrapper">
+
+            <app-navbar></app-navbar>
+
+            <main id="js-page-content" role="main" class="page-content">
+
+                 <!-- ENRUTAMIENTO CHILD -->
+                <router-outlet></router-outlet>
+
+            </main>
+
+            <!-- this overlay is activated only when mobile menu is triggered -->
+            <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div>
+
+            <footer class="page-footer" role="contentinfo">
+                <app-footer></app-footer>
+            </footer>
+
+            <app-modal></app-modal>
+
+        </div>
+    </div>
+</div>
+
+<!-- <app-quickmenu></app-quickmenu>
+
+<app-mensajeria></app-mensajeria> -->
+
+<!-- <app-setting></app-setting> -->

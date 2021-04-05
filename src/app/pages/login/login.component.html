@@ -1,0 +1,83 @@
+<div class="page-wrapper">
+    <div class="page-inner bg-brand-gradient">
+        <div class="page-content-wrapper bg-transparent m-0">
+
+            <app-navbarlogin></app-navbarlogin>
+
+            <div class="flex-1" style="background: url(./assets/img/svg/pattern-1.svg) no-repeat center bottom fixed; background-size: cover;">
+                <div class="container py-4 py-lg-5 my-lg-5 px-4 px-sm-0">
+                    <div class="row">
+
+                        <div class="col col-md-6 col-lg-7 hidden-sm-down">
+                            <img src="assets/img/bot.png" id="img_login" class="img-fluid animatedd" alt="">
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 ml-auto animate__animated animate__slideInRight animate__faster">
+                            <div class="col-xl-12">
+                                <h2 class="fs-xxl fw-500 text-white text-center">
+                                    Inicia sesión
+                                </h2>
+                            </div>
+
+                            <div class="card p-4 mt-5 rounded-plus bg-faded">
+                                <form (ngSubmit)="login( f )"
+                                    #f="ngForm" 
+                                    id="js-login" novalidate="" action="intel_analytics_dashboard.html">
+                                    <div class="form-group">
+                                        <label class="form-label" for="username">Usuario</label>
+                                        <input class="form-control form-control-lg" 
+                                            type="text" 
+                                            name="email" 
+                                            [(ngModel)]="usuario.email"
+                                            required
+                                            email
+                                            placeholder="Introduce tu email">
+
+                                        <span *ngIf="f.submitted && f.controls['email'].errors"
+                                            class="text-danger animated fadeIn">El correo es obligatorio</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="password">Contraseña</label>
+
+                                        <input class="form-control form-control-lg"
+                                            type="password" 
+                                            name="password" 
+                                            [(ngModel)]="usuario.password"
+                                            required
+                                            minlength="6"
+                                            placeholder="Password">
+
+                                        <span *ngIf="f.submitted && f.controls['password'].errors"
+                                         class="text-danger animated fadeIn">Al menos 6 letras</span>
+
+                                    </div>
+                                    <div class="form-group text-left">
+                                        <div class="custom-control custom-checkbox">
+                                            <input  [(ngModel)]="recordarme"
+                                                    type="checkbox" class="custom-control-input" id="rememberme" name="remember-me">
+
+                                            <label class="custom-control-label" for="rememberme"> Recordarme por los próximos 30 días.</label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-6 pl-lg-1 my-2 text-center">
+                                            <button id="js-login-btn" 
+                                            type="submit"
+                                            class="btn btn-info btn-block btn-lg">Logueate</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                <app-footer-login></app-footer-login>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

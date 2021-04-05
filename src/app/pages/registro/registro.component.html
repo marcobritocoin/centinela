@@ -1,0 +1,96 @@
+<div class="page-wrapper">
+    <div class="page-inner bg-brand-gradient">
+        <div class="page-content-wrapper bg-transparent m-0">
+
+            <app-navbarlogin></app-navbarlogin>
+
+            <div class="flex-1" style="background: url(./assets/img/svg/pattern-1.svg) no-repeat center bottom fixed; background-size: cover;">
+                <div class="container py-4 py-lg-5 my-lg-5 px-4 px-sm-0">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <h2 class="fs-xxl fw-500 text-white text-center">
+                                Crea tu cuenta nueva
+                            </h2>
+                        </div>
+                        <div class="col-xl-6 mt-5 ml-auto mr-auto animate__animated animate__slideInRight animate__faster">
+                            <div class="card p-4 rounded-plus bg-faded">
+
+                                <form (ngSubmit)="onSubmit( f )"
+                                    #f="ngForm"
+                                    id="js-login" novalidate="" action="">
+
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="emailverify">Email:</label>
+                                        <input  id="emailverify" class="form-control" 
+                                                type="email" 
+                                                name="email"
+                                                [(ngModel)]="usuario.email"
+                                                required
+                                                email
+                                                placeholder="Email">
+                                        <span class="focus-input100"></span>
+                                        <span *ngIf="f.submitted && f.controls['email'].errors"
+                                            class="text-danger animated fadeIn">El correo es obligatorio</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="emailverify">Nombre y Apellidos:</label>
+                                        <input  id="emailverify" class="form-control"
+                                                type="text" 
+                                                name="nombre" 
+                                                [(ngModel)]="usuario.nombre"
+                                                minlength="2"
+                                                required
+                                                placeholder="Nombre y apellidos">
+                                        <span class="focus-input100"></span>
+                                        <span *ngIf="f.submitted && f.controls['nombre'].errors"
+                                            class="text-danger animated fadeIn">El nombre es obligatorio</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="userpassword">Password:</label>
+                                        <input  id="userpassword" class="form-control"
+                                                type="password" 
+                                                name="password" 
+                                                [(ngModel)]="usuario.password"
+                                                minlength="6"
+                                                required
+                                                placeholder="Password">
+                                            <span class="focus-input100"></span>
+                                        <span *ngIf="f.submitted && f.controls['password'].errors"
+                                            class="text-danger animated fadeIn">Al menos 6 letras</span>
+                                    </div>
+
+                                    <div class="form-group demo">
+                                        <div class="custom-control custom-checkbox">
+                                            <input [(ngModel)]="recordarme"
+                                                    class="custom-control-input" id="terms" type="checkbox" name="remember-me">
+                                            <label class="custom-control-label" for="terms"> Recordar mi usuario</label>
+                                        </div>
+                                    </div>
+
+
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4 ml-auto text-right">
+                                                <button id="js-login-btn" type="submit" class="btn btn-block btn-info btn-lg mt-3">Registrar</button>
+                                            </div>
+                                        </div>
+                                </form>
+
+
+                                    
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <app-footer-login></app-footer-login>
+
+            </div>
+        </div>
+    </div>
+</div>

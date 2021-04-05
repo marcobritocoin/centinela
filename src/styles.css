@@ -1,0 +1,85 @@
+.color-primary {
+    color: #2198F3 !important;
+}
+
+.color-success {
+    color: #69FB13 !important;
+}
+
+.color-info {
+    color: #BB1BF4 !important;
+}
+
+.color-warning {
+    color: #FF9A13 !important;
+}
+
+.color-danger {
+    color: #FC1349 !important;
+}
+
+@media (min-width: 992px){
+.nav-function-hidden:not(.nav-function-top) .page-wrapper {
+    padding-left: 0rem !important;
+}
+}
+
+/*
+*    ----- ANIMACIONES ---------------------
+*/
+
+/* #hero .animatedd {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+} */
+
+.animatedd {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ---------------------------------------------  */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
